@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product — Styled Across</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header small">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Styled Across</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container product-page">
+    <div id="productTop" class="product-top"></div>
+
+    <section class="product-about">
+      <h3>About this item</h3>
+      <div id="aboutText" class="editable about-editable" contenteditable="true"></div>
+    </section>
+
+    <section class="checkout">
+      <h3>Pay</h3>
+
+      <form id="buyerForm" class="buyer-form" onsubmit="return false;">
+        <label>Name <input id="buyerName" required></label>
+        <label>Email <input id="buyerEmail" type="email" required></label>
+        <label>Phone <input id="buyerPhone"></label>
+        <label>Home address <input id="buyerAddress"></label>
+        <label>Bank account / sort code (optional) <input id="buyerBank"></label>
+      </form>
+
+      <div class="payment-buttons">
+        <button id="checkoutBtn" class="pay-btn">Pay (Apple Pay / Card / Google Pay)</button>
+        <button id="emailOrderBtn" class="pay-btn alt">Send order by email (fallback)</button>
+      </div>
+
+      <p class="note small">Payments handled securely by Stripe Checkout. Apple Pay appears automatically on supported devices once you enable it in Stripe and verify your domain.</p>
+    </section>
+
+    <div class="edit-controls">
+      <button id="saveProductBtn" class="btn">Save edits (to browser)</button>
+      <button id="resetProductBtn" class="btn alt">Reset to defaults</button>
+    </div>
+  </main>
+
+  <script>
+    window.APP_CONFIG = window.APP_CONFIG || { SERVER_ORIGIN: "" };
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
